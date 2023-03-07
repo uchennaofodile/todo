@@ -80,20 +80,24 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}))
 app.set('views', path.join(__dirname, 'views'));
 
-// Routing
+// Routings
 app.get('/', (req, res) => {
-  res.render('index.ejs', { name: 'Uchenna' });
+  res.render('index.ejs', { name:'Created By Uchenna Ofodile' });
 });
 
+
+app.get('/help',(req,res)=>{
+  res.render('help.ejs', { name:'Created By Uchenna Ofodile' });
+});
 
 
 //GET Login
 app.get('/login', (req, res) => {
-  res.render('login.ejs');
+  res.render('login.ejs', {name:'Created By Uchenna Ofodile' });
 });
 
 app.get('/register', (req, res) => {
-  res.render('register.ejs');
+  res.render('register.ejs', {name: 'Created By Uchenna Ofodile' });
 });
 
 

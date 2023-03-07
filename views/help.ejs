@@ -26,13 +26,13 @@
     <div class=" shadow-lg h-100 row border rounded-3" style="background-color: white;">
         <div class=" h-100 col-sm-3 rounded-3 text-bg-light border-end text-black-50  text-center" id="main-body">
             <h1 class="display-1 pt-3">Todo</h1>
-            <!-- <div class="container-sm pt-4 text-center text-black-50 text-bg-light" id="header">
+            <div class="container-sm pt-4 text-center text-black-50 text-bg-light" id="header">
                 <h1 class="display-5"></h1>
                 <div id="parent">
-                    <button class="form-control" id="login">Login</button>
-                    <a class="text-decoration-none text-start" href="/register">Register</a>
+                    <!-- <button class="form-control" id="login">Login</button>
+                    <a class="text-decoration-none text-start" href="/register">Register</a> -->
                 </div>
-                <br> -->
+                <br>
 
                 <!-- <div class="row">
         <div class="col-sm-3"><a class="text-decoration-none" href="#"><h6><small>About</small></h6></a></div>
@@ -50,20 +50,44 @@
                 </li>
 
             </ul> -->
-            <br>
+
             <div class="dropdown">
                 <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
                   Menu
                 </button>
                 <ul class="dropdown-menu">
-                  
+                  <li><a class="dropdown-item" href="/help">Help</a></li>
                   <li><a class="dropdown-item" href="/login">Login</a></li>
-                  <li><a class="dropdown-item" href="/register">Register</a><li>
-                  <!-- <li><a class="dropdown-item" href="/help">Help</a></li> -->
+                  <li><a class="dropdown-item" href="/register">Register</a></li>
                 </ul>
+                
               </div>
             </div>
         </div>
+        <div class="container mt-3">
+            <!-- <h2>Todo</h2> -->
+            <!-- <p>Contact Me:</p>             -->
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th id=>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Uchenna</td>
+                  <td>Ofodile</td>
+                  <td id="userEmail">uchenna.ofodile@gmail.com</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        
+       
+        
 
       
 
@@ -71,13 +95,17 @@
 
         
     </div>
-   
-        <div class=" h-5 rounded-3" style="background-color: #5b5fc7;">
-        </div>
 
 
     
     <script>
+
+
+        //create a new node
+        const userEmail = document.getElementById('userEmail');
+
+        
+
         //create a new node
         const button = document.getElementById('login');
         
@@ -108,7 +136,7 @@
 
 
         //filling th chatUi
-        chatUi.innerHTML += '<textarea  placeholder="Add something new" class="container rounded-4 border border-0" id="message-input"></textarea><input id="send" class="form-control" type="submit">'
+        chatUi.innerHTML += '<textarea  placeholder="Add something new" class="mt-4 p-5 col-sm-9 container rounded" id="message-input"></textarea><input id="send" class="form-control" type="submit">'
       
         //getting text area
         const messageInput = chatUi.querySelector('#message-input');
@@ -297,8 +325,7 @@
         //formForLogin.addEventListener('submit', (e)=>{e.preventDefault();})
         
         </script>
-        <h6 class="font-weight-light text-black-50"><small><%= name %></small></h6>
-        
+        <!-- <h6 class="font-weight-light text-black-50"><small><%= name %></small></h6> -->
 </body>
 
 </html>
