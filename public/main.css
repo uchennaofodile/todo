@@ -1,0 +1,14 @@
+body{
+     background-color:darkgrey;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+
+    
+}
+
+.message-window {
+     height: 400px;
+     overflow-y: scroll;
+   }
