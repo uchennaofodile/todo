@@ -286,11 +286,18 @@
         
         }
         
-        //validating email
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
+       //Email validation using Regex
+    const emailInput = document.getElementById('email');
+
+getEmail.addEventListener('blur', function() {
+  const email = emailInput.value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    getEmail.setCustomValidity('Please enter a valid email address.');
+  } else {
+    getEmail.setCustomValidity('');
+  }
+});
         
         //Login function
         // const replaceLoginButton = () => {

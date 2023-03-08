@@ -39,7 +39,7 @@ const mysql = require("mysql2");
 // const passport = require("./config/passport");
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
-const password =process.env.PASSWORD;
+const password = process.env.PASSWORD;
 
 //Let's create a connection to our local MySQL DB
 // const db = mysql.createConnection({
@@ -72,32 +72,33 @@ const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 
-
+//middleware
+app.use("/public", express.static('public'));
 
 
 app.set('view engine', 'ejs');
 //allows us to access 
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.set('views', path.join(__dirname, 'views'));
 
 // Routings
 app.get('/', (req, res) => {
-  res.render('index.ejs', { name:'Created By Uchenna Ofodile' });
+  res.render('index.ejs', { name: 'Created By Uchenna Ofodile' });
 });
 
 
-app.get('/help',(req,res)=>{
-  res.render('help.ejs', { name:'Created By Uchenna Ofodile' });
+app.get('/help', (req, res) => {
+  res.render('help.ejs', { name: 'Created By Uchenna Ofodile' });
 });
 
 
 //GET Login
 app.get('/login', (req, res) => {
-  res.render('login.ejs', {name:'Created By Uchenna Ofodile' });
+  res.render('login.ejs', { name: 'Created By Uchenna Ofodile' });
 });
 
 app.get('/register', (req, res) => {
-  res.render('register.ejs', {name: 'Created By Uchenna Ofodile' });
+  res.render('register.ejs', { name: 'Created By Uchenna Ofodile' });
 });
 
 

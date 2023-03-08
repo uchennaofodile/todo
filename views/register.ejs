@@ -34,9 +34,11 @@
                     <a class="text-decoration-none text-start" href="/register">Register</a>
                 </div> -->
   <div id="parent">
-                    <form id="form-for-login"><div class="container-sm-4 was-validated" id="loginForm"><form action="/login" method="POST"><label class="form-label" for="email" required>Email:</label><input class="form-control" type="text" id="email" name="email" placeholder="Email" onblur="validateEmail(this.value)" required><div class="valid-feedback"></div><br><label class="form-label" for="password" required>Password:</label><input class="form-control"  type="text" id="password" name="password" placeholder="Password" required><div class="valid-feedback"></div><br><input class="form-control"  id="userSubmit" type="submit" placeholder="Submit"></div></form></form>
+                <form action="/login" method="POST" id="form-for-login">
+                    <div class="container-sm-4 was-validated" id="loginForm"><label class="form-label" for="email" required>Email:</label><input class="form-control" type="text" id="email" name="email" placeholder="Email"  required><div class="valid-feedback"></div><br><label class="form-label" for="password" required>Password:</label><input class="form-control"  type="text" id="password" name="password" placeholder="Password" required><div class="valid-feedback"></div><br><input class="form-control"  id="userSubmit" type="submit" placeholder="Submit"></div>
+                </form>
                 </div>
-
+<!-- onblur="validateEmail(this.value)" -->
                 <br>
 
                 <!-- <div class="row">
@@ -284,12 +286,21 @@
         
         }
         
-        //validating email
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-        
+
+//Email validation using Regex
+    const emailInput = document.getElementById('email');
+
+getEmail.addEventListener('blur', function() {
+  const email = emailInput.value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    getEmail.setCustomValidity('Please enter a valid email address.');
+  } else {
+    getEmail.setCustomValidity('');
+  }
+});
+
+
         //Login function
         // const replaceLoginButton = () => {
         //     parent.replaceChild(formForLogin, button);
