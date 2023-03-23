@@ -79,7 +79,16 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }))
 app.set('views', path.join(__dirname, 'views'));
 
+
+
 // Routings
+
+app.get('/public/main.js', function (req, res) {
+  res.type('text/javascript');
+  res.sendFile(__dirname + '/public/main.js');
+});
+
+
 app.get('/', (req, res) => {
   res.render('index.ejs', { name: 'Created By Uchenna Ofodile' });
 });
