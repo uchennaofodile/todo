@@ -4,6 +4,7 @@
   "description": "A chat application",
   "main": "index.ejs",
   "scripts": {
+    "start": "node index.ejs",
     "dev": "nodemon server.js"
   },
   "repository": {
