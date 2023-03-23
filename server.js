@@ -37,9 +37,9 @@ const express = require('express');
 const session = require('express-session')
 const mysql = require("mysql2");
 // const passport = require("./config/passport");
-require('dotenv').config();
-const apiKey = process.env.API_KEY;
-const password = process.env.PASSWORD;
+// require('dotenv').config();
+// const apiKey = process.env.API_KEY;
+// const password = process.env.PASSWORD;
 
 //Let's create a connection to our local MySQL DB
 // const db = mysql.createConnection({
